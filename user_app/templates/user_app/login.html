@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Main</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'main_app/style.css' %}" />
+</head>
+<body>
+	
+	{% if form.name.errors %}
+	    <ul>
+	    {% for error in form.name.errors %}
+	        <li>{{ error }}</li>
+	    {% endfor %}
+	{% endif %}
+
+	<div id="wrapper" style="background-color:white;padding:15px;height:auto">
+		{% if messages %}
+		    {% for message in messages %}
+		    	<strong>{{ message }}</strong><br>
+		    	<hr>
+		    {% endfor %}
+		{% endif %}
+
+		<form action="{% url 'my_login' %}" method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+	</div>
+</body>
+</html>

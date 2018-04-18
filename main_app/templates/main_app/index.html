@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Main</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'main_app/style.css' %}" />
+</head>
+<body>
+
+	<a href="{% url 'my_logout' %}" class="btn float-right">Logout</a>
+
+	<div id="wrapper">
+		<div id="list-container">
+			<div id="list-header">
+				<a href="#" class="float-left">--</a>
+				<a href="#" class="float-right">+</a>
+			</div>
+			<div class="container" id="list-main">
+				{% for t in tasks %}
+					<div class="row task-item">
+						<div class="col-2 done-box">
+							<input type="checkbox">    
+						</div>
+					    <div class="col-10">
+					    	<h4>{{ t.title }}</h4>
+					    </div>
+					</div>
+				{% endfor %}
+				<div class="row task-item">
+					<div class="col-2 done-box">
+						<input type="checkbox">    
+					</div>
+				    <div class="col-10">
+				    	<input type="text" name="" class="col-12 input-item" placeholder="Add new task...">
+				    </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

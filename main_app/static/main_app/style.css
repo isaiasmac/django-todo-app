@@ -1,0 +1,44 @@
+body{
+	font-family: Helvetica, Arial;
+}
+#wrapper{
+	max-width: 650px;
+	margin: 10px auto;
+	margin-top: 12%;
+	border: 1px solid #DDD;
+	min-height: 400px;
+	background-color: #FBECCB;
+}
+#list-container{
+}
+#list-header{
+	background-color: #AB692F;
+	height: 50px;
+
+}
+#list-main{
+}
+.task-item{
+	height: 85px;
+	max-height: 85px;
+	border-bottom: 1px solid #D8C7A1;
+}
+.task-item h4{
+	font-weight: lighter;
+	color: #75563A;
+	margin-top: 25px;
+}
+.task-item input[type=checkbox]{
+	margin-top: 25px;
+}
+.done-box{
+	text-align: center;
+    border-right: 1px solid #DFC1B8;
+}
+.input-item{
+	margin-top: 15px;
+    height: 50px;
+    background-color: #E4D1AA;
+    border: 0px solid #DDD;
+    padding: 10px;
+}
